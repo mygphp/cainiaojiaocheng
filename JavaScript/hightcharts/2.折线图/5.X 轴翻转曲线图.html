@@ -1,0 +1,85 @@
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title> X 轴翻转曲线图</title>
+    <script src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script src="http://code.highcharts.com/highcharts.js"></script>
+</head>
+<body>
+<div id="container" style="width: 550px; height: 400px; margin: 0 auto"></div>
+<script language="JavaScript">
+    $(document).ready(function() {
+        //配置图表类型 type 为 spline。chart.type 默认为 "line"。
+        //配置 X 轴翻转。inverted 设置为 true 即 X 轴翻转，默认为 false。
+        var chart = {
+            type: 'spline',
+            inverted: true
+        };
+        var title = {
+            text: '大气温度的高度'
+        };
+        var subtitle = {
+            text: '根据标准大气模型'
+        };
+        var xAxis = {
+            reversed: false,
+            title: {
+                enabled: true,
+                text: '高度'
+            },
+            labels: {
+                formatter: function () {
+                    return this.value + 'km';
+                }
+            },
+            maxPadding: 0.05,
+            showLastLabel: true
+        };
+        var yAxis = {
+            title: {
+                text: '温度'
+            },
+            labels: {
+                formatter: function () {
+                    return this.value + '\xB0';
+                }
+            },
+            lineWidth: 2
+        };
+        var legend = {
+            enabled: false
+        };
+        var tooltip = {
+            headerFormat: '<b>{series.name}</b><br/>',
+            pointFormat: '{point.x} km: {point.y}\xB0C'
+        };
+        var plotOptions = {
+            spline: {
+                marker: {
+                    enable: false
+                }
+            }
+        };
+        var series= [{
+            name: 'Temperature',
+            data: [[0, 15], [10, -50], [20, -56.5], [30, -46.5], [40, -22.1],
+                [50, -2.5], [60, -27.7], [70, -55.7], [80, -76.5]]
+        }];
+
+
+        var json = {};
+        json.chart = chart;
+        json.title = title;
+        json.subtitle = subtitle;
+        json.legend = legend;
+        json.tooltip = tooltip;
+        json.xAxis = xAxis;
+        json.yAxis = yAxis;
+        json.series = series;
+        json.plotOptions = plotOptions;
+        $('#container').highcharts(json);
+
+    });
+</script>
+</body>
+</html>

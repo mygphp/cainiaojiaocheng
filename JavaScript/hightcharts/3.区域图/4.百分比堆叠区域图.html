@@ -1,0 +1,94 @@
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>Highcharts 教程 | 菜鸟教程(runoob.com)</title>
+    <script src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script src="http://code.highcharts.com/highcharts.js"></script>
+</head>
+<body>
+<div id="container" style="width: 550px; height: 400px; margin: 0 auto"></div>
+<script language="JavaScript">
+    $(document).ready(function() {
+        var chart = {
+            type: 'area'
+        };
+        var title = {
+            text: '历史和估计的全球人口按地区增长'
+        };
+        var subtitle = {
+            text: '来源: Wikipedia.org'
+        };
+        var xAxis = {
+            categories: ['1750', '1800', '1850', '1900', '1950', '1999', '2050'],
+            tickmarkPlacement: 'on',
+            title: {
+                enabled: false
+            }
+        };
+        var yAxis = {
+            title: {
+                text: '十亿'
+            },
+            labels: {
+                formatter: function () {
+                    return this.value / 1000;
+                }
+            }
+        };
+        var tooltip = {
+            shared: true,
+            valueSuffix: ' millions'
+        };
+        //plotOptions：数据点选项
+        //plotOptions用于设置图表中的数据点相关属性。
+        // plotOptions根据各种图表类型，其属性设置略微有些差异。
+        //配置图表堆叠设置 plotOptions.area.stacking 为 "percent"。
+        // 如果禁用堆叠使用 null。
+        var plotOptions = {
+            area: {
+                stacking: 'percent',
+                lineColor: '#666666',
+                lineWidth: 1,
+                marker: {
+                    lineWidth: 1,
+                    lineColor: '#666666'
+                }
+            }
+        };
+        var credits = {
+            enabled: false
+        };
+        var series= [{
+            name: '亚洲',
+            data: [502, 635, 809, 947, 1402, 3634, 5268]
+        }, {
+            name: '非洲',
+            data: [106, 107, 111, 133, 221, 767, 1766]
+        }, {
+            name: '欧洲',
+            data: [163, 203, 276, 408, 547, 729, 628]
+        }, {
+            name: '美洲',
+            data: [18, 31, 54, 156, 339, 818, 1201]
+        }, {
+            name: '大洋洲',
+            data: [2, 2, 2, 6, 13, 30, 46]
+        }
+        ];
+
+        var json = {};
+        json.chart = chart;
+        json.title = title;
+        json.subtitle = subtitle;
+        json.xAxis = xAxis;
+        json.yAxis = yAxis;
+        json.tooltip = tooltip;
+        json.plotOptions = plotOptions;
+        json.credits = credits;
+        json.series = series;
+        $('#container').highcharts(json);
+
+    });
+</script>
+</body>
+</html>
