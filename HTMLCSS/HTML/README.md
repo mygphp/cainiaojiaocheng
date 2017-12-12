@@ -17,3 +17,8 @@ div {
   -webkit-line-clamp: 2;
   -webkit-box-orient:vertical;
 }
+
+CSS修饰标签的样式，有 "内联" 和 "外引" 两种方式。
+对于大部分标签，以上两种方法均可，且修改父级标签，子级标签特性也会改变。但某些标签确无法通过修改父级标签来改变子级标签特性，如a标签，修改其颜色特性，必须直接修改 a 标签的特性才可。
+实例：
+<a href="#" style="color：red;" rel="nofollow">只能使用"内联"方式</a>
