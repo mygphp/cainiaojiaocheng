@@ -2,9 +2,21 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>html 图片映射</title>
 </head>
 <body>
-
+<p>点击太阳或其他行星，注意变化：</p>
+<img src="../../images/planets.gif" alt="图片映射" usemap="#planetmap" width="146" height="126">
+<map name="planetmap">
+    <!--shape指的是点击区域的形状，coords指的应该是链接区域在图片中的坐标-->
+    <!--
+    1、距形：(左上角顶点坐标为(x1,y1)，右下角顶点坐标为(x2,y2))
+    2、圆形：(圆心坐标为(X1,y1)，半径为r)
+    3、多边形：(各顶点坐标依次为(x1,y1)、(x2,y2)、(x3,y3) ......)
+    -->
+    <area shape="rect" coords="0,0,82,126" href="html%20图像.html" alt="太阳">
+    <area shape="circle" coords="90,58,3" href="html%20浮动图片.html" alt="金星">
+    <area shape="circle" coords="124,58,8" href="html%20设置图片链接.html" alt="木星">
+</map>
 </body>
 </html>
