@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>添加元素</title>
+    <script src="http://cdn.static.runoob.com/libs/jquery/1.10.2/jquery.min.js"></script>
+</head>
+<body>
+<p class="p1">这是一个元素</p>
+<button class="btn1">元素前添加</button>
+<button class="btn2">元素后添加</button>
+<br>
+<button class="btn3">被选元素前添加</button>
+<button class="btn4">被选元素后添加</button>
+</body>
+</html>
+<script type="text/javascript">
+    $(document).ready(function(){
+        //append() - 在被选元素的结尾插入内容
+        //prepend() - 在被选元素的开头插入内容
+        $('.btn1').click(function () {
+            $('.p1').prepend('元素前追加文本，');
+        });
+        $('.btn2').click(function(){
+            $('.p1').append('，元素后追加文本');
+        })
+        //jQuery after() 方法在被选元素之后插入内容。
+        //jQuery before() 方法在被选元素之前插入内容。
+        $('.btn3').click(function () {
+            $('.p1').before('被选元素前追加文本，');
+        });
+        $('.btn4').click(function(){
+            $('.p1').after('，被选元素后追加文本');
+        })
+    })
+</script>
