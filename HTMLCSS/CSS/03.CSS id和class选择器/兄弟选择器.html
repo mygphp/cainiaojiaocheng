@@ -2,9 +2,18 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>兄弟选择器</title>
+    <style>
+        div~p{ color: red; }
+    </style>
 </head>
 <body>
-
+<p>red text</p><!--文字是红色的-->
+<div>
+    <br>no red text</p><!--文字是非红色的-->
+    <div>no red text</div>
+    <p>red text</p><!--文字是红色的-->
+</div>
+<p>red text</p><!--文字是红色的-->
 </body>
 </html>
