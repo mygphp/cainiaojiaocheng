@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>函数表达式</title>
+</head>
+<body>
+<p>函数可以存储在变量中:</p>
+<div id="demo"></div>
+<div id="demo1"></div>
+</body>
+</html>
+<script type="text/javascript">
+    var x = function(a,b){ return a * b; }
+    document.getElementById('demo').innerHTML = x;
+    document.getElementById('demo1').innerHTML = x(4,5);
+</script>

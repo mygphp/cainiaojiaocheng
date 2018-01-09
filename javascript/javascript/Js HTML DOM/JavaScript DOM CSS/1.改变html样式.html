@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>改变html样式</title>
+</head>
+<body>
+<p id="p1">Hello World!</p>
+<p id="p2">Hello World!</p>
+<button onclick="func()">改变样式</button>
+
+<p>以上段落通过脚本修改。</p>
+</body>
+</html>
+<script type="text/javascript">
+    function func() {
+        var element = document.getElementById("p2");
+        element.style.color = 'blue';
+        element.style.fontFamily = "Arial";
+        element.style.fontSize = 'larger';
+
+    }
+</script>

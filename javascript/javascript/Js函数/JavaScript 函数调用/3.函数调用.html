@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>函数调用</title>
+</head>
+<body>
+<p>该实例中， myFunction 是函数构造函数:</p>
+<p id="demo"></p>
+</body>
+</html>
+<script type="text/javascript">
+    function func(first,last) {
+        this.firstName = first;
+        this.lastName = last;
+    }
+    var x = new func('a','b');
+    document.getElementById('demo').innerHTML = x.firstName;
+</script>

@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>鼠标移动事件</title>
+</head>
+<body>
+
+<div onmouseover="mOver(this)" onmouseout="mOut(this)" style="background-color:#D94A38;width:120px;height:20px;padding:40px;">Mouse Over Me</div>
+</body>
+</html>
+<script type="text/javascript">
+    function mOver(obj){
+        obj.innerHTML = "think you";
+    }
+    function mOut(obj){
+        obj.innerHTML = "Mouse Over Me";
+    }
+</script>

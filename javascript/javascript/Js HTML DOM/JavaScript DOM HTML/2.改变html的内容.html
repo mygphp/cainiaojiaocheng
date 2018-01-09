@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>改变HTML的内容</title>
+</head>
+<body>
+<h1 id="h1">old header</h1>
+<p id="p1">hello world</p>
+<button class="" onclick="func()">改变p内容</button>
+<button onclick="func1()">改变标题</button>
+</body>
+</html>
+<script type="text/javascript">
+    function func() {
+        document.getElementById('p1').innerHTML = '新文本';
+    }
+    function func1(){
+        var element = document.getElementById('h1');
+        element.innerHTML = '新标题';
+    }
+</script>
