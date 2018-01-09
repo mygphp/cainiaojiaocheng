@@ -6,8 +6,15 @@
 </head>
 <body>
 <p>先创建js对象，再添加对象的内容</p>
+<div id="demo"></div>
 <script type="text/javascript">
-    
+    var person = new Object();
+    person.name = '马文鑫';
+    person.sex = '男';
+    person.fullName = function(){
+        return person.name;
+    };
+    document.getElementById('demo').innerHTML = person.fullName();
 </script>
 </body>
 </html>
