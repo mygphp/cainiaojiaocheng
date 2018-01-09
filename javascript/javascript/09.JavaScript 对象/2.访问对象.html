@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>js对象的访问</title>
+</head>
+<body>
+<p>js对象的两种访问方式</p>
+<div id="demo"></div>
+<script type="text/javascript">
+    var person = {
+        firstName:'文鑫',
+        lastName:'马',
+        age:25
+    }
+    document.getElementById('demo').innerHTML = person.lastName + person['firstName'];
+</script>
+</body>
+</html>

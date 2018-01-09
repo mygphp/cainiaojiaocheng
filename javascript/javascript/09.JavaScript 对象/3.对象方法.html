@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>js对象方法</title>
+</head>
+<body>
+<p>对象的方法定义了一个函数，并作为对象的属性存储。</p>
+<p>对象方法通过添加 () 调用 (作为一个函数)。</p>
+<div id="demo"></div>
+<script type="text/javascript">
+    var person = {
+        firstName:'文鑫',
+        lastName:'马',
+        age:25,
+        fullName:function () {
+            return '姓名' + person.lastName + person.firstName + '年龄' + person.age;
+        }
+    }
+    document.getElementById('demo').innerHTML = person.fullName();
+</script>
+</body>
+</html>
