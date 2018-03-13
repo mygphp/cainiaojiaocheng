@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>vue指令</title>
+    <script src="../vue.js"></script>
+</head>
+<body>
+<div id="app">
+    <p>{{message}}</p>
+    <button v-on:click="reserveMessage">反转字符串</button>
+</div>
+
+<script>
+new Vue({
+    el:"#app",
+    data:{
+        message:"runoob"
+    },
+    methods: {
+        reserveMessage:function () {
+            this.message = this.message.split('').reverse().join('')
+        }
+    }
+});
+</script>
+</body>
+</html>
